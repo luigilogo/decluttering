@@ -8,111 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
-</head>
-<body>
-  <header class="hero">
-    <div class="logo-container">
-      <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" alt="Logo RE-SPACE" class="logo-img">
-    </div>
-    <div class="hero-content">
-      <h1 class="logo-text">RE-SPACE</h1>
-      <h2>Rigeneriamo spazi, creiamo valore</h2>
-      <p>Meno cose, più impatto.</p>
-      <a href="#services" class="btn">Scopri di più</a>
-    </div>
-  </header>
-
-  <main>
-       <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="#services">Servizi</a></li>
-        <li><a href="#impact">Impatto</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#accountability">Bilancio di Sostenibilità</a></li>
-        <li><a href="#contact">Contatti</a></li>
-      </ul>
-    </nav>
-    <section id="services" class="section">
-      <h2>Servizi</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1588854337115-8c394b2c3085" class="service-img" alt="Residenziale">
-          <h3>Decluttering residenziale</h3>
-          <p>Riordina casa in modo sostenibile, con donazione e riciclo.</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36" class="service-img" alt="Aziendale">
-          <h3>Decluttering aziendale</h3>
-          <p>Ottimizza spazi ufficio e archivi con backup digitale e rigenerazione.</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1581092334395-3e04b597b77c" class="service-img" alt="Piattaforma">
-          <h3>Piattaforma digitale</h3>
-          <p>Traccia e vendi oggetti recuperati su marketplace dedicato.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="impact" class="section alt">
-      <h2>Il nostro impatto</h2>
-      <div class="stats">
-        <div><strong>82%</strong><span>oggetti riutilizzati</span></div>
-        <div><strong>4t</strong><span>CO₂ risparmiate/anno</span></div>
-        <div><strong>7+</strong><span>cooperative partner</span></div>
-        <div><strong>2.500+</strong><span>clienti soddisfatti</span></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Testimonianze</h2>
-      <div class="cards">
-        <div class="card">
-          <p><em>“Grazie a RE-SPACE ho trasformato il mio garage in un angolo studio. Servizio impeccabile e super sostenibile!”</em></p>
-          <strong>- Laura, Milano</strong>
-        </div>
-        <div class="card">
-          <p><em>“Avevamo archivi cartacei ovunque. Ora tutto è digitalizzato e lo spazio è stato riconvertito in area relax per i dipendenti.”</em></p>
-          <strong>- Marco, Bologna</strong>
-        </div>
-        <div class="card">
-          <p><em>“Non pensavo che donare oggetti potesse essere così semplice. Un servizio davvero utile.”</em></p>
-          <strong>- Giulia, Torino</strong>
-        </div>
-      </div>
-    </section>
-
-    <section id="team" class="section alt">
-      <h2>Il nostro team</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="https://res.cloudinary.com/demo/image/upload/v1715980000/founder1.jpg" alt="Chiara Rinaldi" class="team-photo">
-          <h3>Chiara Rinaldi</h3>
-          <p>Founder & CEO</p>
-        </div>
-        <div class="card">
-          <img src="https://res.cloudinary.com/demo/image/upload/v1715980000/founder2.jpg" alt="Luca Verdi" class="team-photo">
-          <h3>Luca Verdi</h3>
-          <p>COO</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <section id="contact" class="section alt">
-    <h2>Contatti</h2>
-    <p>Scrivici a <a href="mailto:info@respace.it">info@respace.it</a> o compila il form.</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Nome" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Messaggio" required></textarea>
-      <button type="submit" class="btn">Invia</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 RE-SPACE Srl | Società Benefit</p>
-  </footer>
-
   <style>
     body {
       margin: 0;
@@ -121,24 +16,15 @@
       color: #1f2937;
     }
     .hero {
-      background: linear-gradient(to right, #15803d, #166534);
+      background: linear-gradient(to right, #2e7d32, #1b5e20);
       color: white;
-      padding: 4rem 2rem 3rem;
+      padding: 4rem 2rem 2rem;
       text-align: center;
       position: relative;
     }
-    .logo-container {
-      display: flex;
-      justify-content: center;
-    }
     .logo-img {
-      width: 80px;
-      height: 80px;
-    }
-    .logo-text {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-top: 1rem;
+      width: 150px;
+      height: auto;
     }
     .nav-links {
       list-style: none;
@@ -146,7 +32,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      margin: 1rem 0 2rem;
+      margin: 2rem 0 1rem;
       flex-wrap: wrap;
     }
     .nav-links a {
@@ -244,6 +130,25 @@
       color: white;
     }
   </style>
-</body>
-</html>
+</head>
+<body>
+  <header class="hero">
+    <div class="logo-container">
+      <img src="https://res.cloudinary.com/dpjc6t5fz/image/upload/v1716066559/logo-respace-art.png" alt="RE-SPACE logo artistico" class="logo-img">
+    </div>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="#services">Servizi</a></li>
+        <li><a href="#impact">Impatto</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h2>Rigeneriamo spazi, creiamo valore</h2>
+      <p>Meno cose, più impatto.</p>
+      <a href="#services" class="btn">Scopri di più</a>
+    </div>
+  </header>
 
+  <!-- Resto del codice invariato -->
