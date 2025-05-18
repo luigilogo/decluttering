@@ -1,16 +1,17 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RE-SPACE Srl</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <header class="hero">
     <div class="logo-container">
-      <img src="https://dummyimage.com/150x150/38bdf8/ffffff&text=RE" alt="Logo RE-SPACE" class="logo-img">
+      <img src="https://res.cloudinary.com/demo/image/upload/v1689797661/logo_respace_impact.png" alt="Logo RE-SPACE" class="logo-img">
       <h1 class="logo-text">RE-SPACE</h1>
     </div>
     <nav class="nav">
@@ -62,15 +63,15 @@
       <div class="cards">
         <div class="card">
           <p><em>“Grazie a RE-SPACE ho trasformato il mio garage in un angolo studio. Servizio impeccabile e super sostenibile!”</em></p>
-          <strong>- Laura, Milano</strong>
+          <strong>- Laura</strong>
         </div>
         <div class="card">
           <p><em>“Avevamo archivi cartacei ovunque. Ora tutto è digitalizzato e lo spazio è stato riconvertito in area relax per i dipendenti.”</em></p>
-          <strong>- Marco, Bologna</strong>
+          <strong>- Marco</strong>
         </div>
         <div class="card">
           <p><em>“Non pensavo che donare oggetti potesse essere così semplice. Un servizio davvero utile.”</em></p>
-          <strong>- Giulia, Torino</strong>
+          <strong>- Giulia</strong>
         </div>
       </div>
     </section>
@@ -94,12 +95,12 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Manrope', sans-serif;
       background: #fdfdfd;
       color: #333;
     }
     .hero {
-      background: #1e293b;
+      background: linear-gradient(to right, #1e293b, #334155);
       color: white;
       padding: 3rem 2rem;
       text-align: center;
@@ -112,21 +113,20 @@
       margin-bottom: 1.5rem;
     }
     .logo-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: white;
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
     }
     .logo-text {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 2.5rem;
+      font-weight: 800;
     }
     .nav-links {
       list-style: none;
       padding: 0;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       margin-bottom: 2rem;
       flex-wrap: wrap;
     }
@@ -134,9 +134,10 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1.1rem;
     }
     .hero-content h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
     }
     .btn {
@@ -149,6 +150,10 @@
       border-radius: 0.5rem;
       font-weight: bold;
       text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0ea5e9;
     }
     .section {
       padding: 4rem 2rem;
@@ -167,10 +172,14 @@
     .card {
       background: white;
       border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       padding: 2rem;
       max-width: 300px;
       flex: 1 1 250px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     .stats {
       display: flex;
@@ -181,7 +190,7 @@
     }
     .stats div {
       background: white;
-      padding: 1rem 2rem;
+      padding: 1.5rem 2.5rem;
       border-radius: 1rem;
       box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     }
@@ -196,6 +205,7 @@
       padding: 0.75rem;
       border: 1px solid #ccc;
       border-radius: 0.5rem;
+      font-family: 'Manrope', sans-serif;
     }
     footer {
       text-align: center;
