@@ -44,16 +44,23 @@
       background-color: rgba(0, 80, 40, 0.6);
       z-index: 1;
     }
-    .logo-container {
-      position: relative;
-      z-index: 2;
-      margin-bottom: 1rem;
-    }
-    .logo-img {
-      width: 260px;
-      height: auto;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-    }
+.logo-container {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img {
+  width: 380px;
+  max-width: 90vw;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
     nav.nav {
       position: relative;
       z-index: 2;
