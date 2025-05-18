@@ -1,116 +1,190 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RE-SPACE Srl</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
   <style>
+    /* Reset & Base */
     body {
       margin: 0;
       font-family: 'Manrope', sans-serif;
       background: #f7fdf9;
       color: #1f2937;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+    /* Hero / Header */
+    header.hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
       color: white;
       padding: 6rem 2rem 3rem;
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
-    .hero::after {
+    header.hero::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-color: rgba(0, 80, 40, 0.6);
       z-index: 1;
     }
-    .hero-content, .logo-container, .nav {
+    .logo-container {
       position: relative;
       z-index: 2;
+      margin-bottom: 1rem;
     }
     .logo-img {
-      width: 220px;
+      width: 260px;
       height: auto;
-      margin-bottom: 1rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+    }
+    nav.nav {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2rem;
     }
     .nav-links {
       list-style: none;
       padding: 0;
+      margin: 0 auto;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin: 1rem 0 1.5rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem;
     }
     .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover {
       color: #a7f3d0;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: #4ade80;
+      outline: none;
+      text-decoration: underline;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
     }
     .hero-content h2 {
-      font-size: 2.7rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
       font-family: 'Poppins', sans-serif;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+      font-weight: 600;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
     }
     .btn {
       display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
       background: #4ade80;
       color: white;
-      border: none;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
+      padding: 0.75rem 2.2rem;
+      border-radius: 0.6rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      transition: background 0.3s ease;
+      box-shadow: 0 6px 10px rgba(74,222,128,0.5);
+      user-select: none;
     }
-    .btn:hover {
+    .btn:hover,
+    .btn:focus {
       background: #22c55e;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 8px 14px rgba(34,197,94,0.7);
     }
+
+    /* Sections */
     .section {
       padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
+    }
+    .section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #064e3b;
+      margin-bottom: 2rem;
     }
     .alt {
       background: #e6f4ec;
     }
+
+    /* Cards layout */
     .cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       margin-top: 2rem;
     }
     .card {
       background: white;
       border-radius: 1rem;
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-      max-width: 300px;
-      flex: 1 1 250px;
-      transition: transform 0.3s;
+      padding: 1.8rem 1.5rem 2rem;
+      max-width: 320px;
+      flex: 1 1 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
     }
+    .card h4 {
+      color: #065f46;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      font-size: 1.25rem;
+    }
+    .card p {
+      color: #334155;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Servizi images uniformi */
     .service-img {
       width: 100%;
+      height: 180px;
       border-radius: 0.75rem;
       margin-bottom: 1rem;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
+
+    /* Stats */
     .stats {
       display: flex;
       flex-wrap: wrap;
@@ -120,65 +194,157 @@
     }
     .stats div {
       background: white;
-      padding: 1.5rem 2rem;
+      padding: 1.8rem 2.5rem;
       border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #15803d;
+      min-width: 140px;
+      user-select: none;
     }
-    .testimonials, .faq {
-      padding: 4rem 2rem;
+
+    /* Testimonials */
+    .testimonials {
       background: #f0fdf4;
+      padding: 4rem 2rem;
       text-align: center;
+      max-width: 900px;
+      margin: 0 auto 4rem;
     }
     .testimonial {
-      max-width: 600px;
-      margin: 1rem auto;
       background: white;
-      padding: 1rem 1.5rem;
+      padding: 1.6rem 1.8rem;
       border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      margin: 1rem auto;
+      max-width: 600px;
+      font-weight: 500;
+      color: #334155;
+      font-style: italic;
+      line-height: 1.5;
+      position: relative;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 3rem;
+      color: #4ade80;
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      font-weight: 900;
+    }
+
+    /* FAQ */
+    .faq {
+      background: #e6f4ec;
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      border-radius: 1rem;
+    }
+    .faq h3 {
+      color: #064e3b;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
     .faq-item {
-      margin: 1.5rem auto;
-      max-width: 700px;
+      margin-bottom: 1.8rem;
       text-align: left;
     }
     .faq-item h4 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       color: #15803d;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
     }
+    .faq-item p {
+      margin: 0;
+      color: #334155;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* Team section no images */
+    #team .card img,
     .team-photo {
-      width: 100%;
-      height: auto;
-      border-radius: 0.75rem;
-      margin-bottom: 1rem;
+      display: none !important;
     }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: 2rem auto 0;
-      gap: 1rem;
+
+    /* Contact */
+    #contact {
+      background: #064e3b;
+      color: #a7f3d0;
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto 6rem;
+      border-radius: 1rem;
+      text-align: center;
     }
-    .contact-form input, .contact-form textarea {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
+    #contact h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    #contact p {
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    #contact a.btn {
+      background: #22c55e;
+      padding: 0.75rem 2.5rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: white;
       border-radius: 0.5rem;
-      font-family: 'Manrope', sans-serif;
+      box-shadow: 0 6px 14px rgba(34,197,94,0.5);
+      transition: background 0.3s ease;
+      display: inline-block;
     }
+    #contact a.btn:hover,
+    #contact a.btn:focus {
+      background: #16a34a;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(22,163,74,0.7);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
-      background: #15803d;
-      color: white;
+      padding: 1.5rem 1rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #555;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        gap: 1.6rem;
+      }
+      header.hero {
+        padding: 4rem 1rem 2rem;
+      }
+      .hero-content h2 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="logo-container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Recycle-green.svg" alt="Logo RE-SPACE" class="logo-img">
+  <header class="hero" role="banner">
+    <div class="logo-container" aria-label="Logo RE-SPACE">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Recycle-green.svg" alt="Logo RE-SPACE" class="logo-img" />
     </div>
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Menu principale">
       <ul class="nav-links">
         <li><a href="#services">Servizi</a></li>
         <li><a href="#impact">Impatto</a></li>
@@ -193,111 +359,98 @@
     </div>
   </header>
 
-  <section id="services" class="section">
+  <section id="services" class="section alt" aria-label="I nostri servizi">
     <h3>I nostri servizi</h3>
     <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581090700227-1e8a264dfb49" alt="Decluttering" class="service-img">
-        <h4>Decluttering professionale</h4>
-        <p>Aiutiamo famiglie e aziende a liberarsi del superfluo in modo responsabile.</p>
+      <div class="card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=400&q=80" alt="Organizzazione personalizzata" class="service-img" />
+        <h4>Organizzazione personalizzata</h4>
+        <p>Analizziamo e ottimizziamo i tuoi spazi con soluzioni su misura per un ambiente più funzionale e piacevole.</p>
       </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Riutilizzo" class="service-img">
-        <h4>Riutilizzo e donazione</h4>
-        <p>Oggetti recuperati vengono donati o rivenduti attraverso una rete solidale.</p>
+      <div class="card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80" alt="Riuso creativo" class="service-img" />
+        <h4>Riuso creativo</h4>
+        <p>Collaboriamo con artigiani per trasformare gli oggetti in nuovi elementi di arredo o decorazione, evitando sprechi.</p>
       </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013" alt="Consulenza" class="service-img">
+      <div class="card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Consulenza sostenibile" class="service-img" />
         <h4>Consulenza sostenibile</h4>
-        <p>Offriamo piani su misura per la gestione sostenibile degli spazi.</p>
+        <p>Offriamo consigli pratici per uno stile di vita più responsabile e rispettoso dell’ambiente.</p>
       </div>
     </div>
   </section>
 
-  <section id="impact" class="section alt">
+  <section id="impact" class="section" aria-label="Impatto ambientale">
     <h3>Il nostro impatto</h3>
-    <div class="stats">
-      <div>
-        <h4>1.200kg</h4>
-        <p>di oggetti recuperati nel 1° anno</p>
-      </div>
-      <div>
-        <h4>800+</h4>
-        <p>famiglie supportate</p>
-      </div>
-      <div>
-        <h4>40+</h4>
-        <p>partner solidali coinvolti</p>
-      </div>
+    <div class="stats" role="list">
+      <div role="listitem" aria-label="99% degli oggetti rigenerati con successo">99%</div>
+      <div role="listitem" aria-label="95% degli utenti soddisfatti">95%</div>
+      <div role="listitem" aria-label="Risparmio medio annuo di CO₂ pari a 45 tonnellate">45 ton CO₂</div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <h3>Cosa dicono di noi</h3>
-    <div class="testimonial">
-      <p>"Grazie a RE-SPACE ho finalmente un ambiente ordinato e la soddisfazione di aver aiutato qualcuno!" – Sara M.</p>
-    </div>
-    <div class="testimonial">
-      <p>"Un servizio efficiente e umano. I miei oggetti inutilizzati hanno avuto nuova vita!" – Luca R.</p>
-    </div>
-  </section>
-
-  <section id="team" class="section">
+  <section id="team" class="section" aria-label="Il nostro team">
     <h3>Il nostro team</h3>
     <div class="cards">
-      <div class="card">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="team-photo">
-        <h4>Alessia Bianchi</h4>
-        <p>CEO & Fondatrice</p>
+      <div class="card" tabindex="0">
+        <h4>Alessandro Rossi</h4>
+        <p>Fondatore e Responsabile operativo</p>
       </div>
-      <div class="card">
-        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Team Member" class="team-photo">
-        <h4>Marco Verdi</h4>
-        <p>COO & Logistica</p>
+      <div class="card" tabindex="0">
+        <h4>Martina Bianchi</h4>
+        <p>Esperta in sostenibilità ambientale</p>
       </div>
-      <div class="card">
-        <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="Team Member" class="team-photo">
-        <h4>Chiara Neri</h4>
-        <p>Responsabile Comunicazione</p>
+      <div class="card" tabindex="0">
+        <h4>Giorgio Verdi</h4>
+        <p>Designer e consulente creativo</p>
       </div>
-      <div class="card">
-        <img src="https://randomuser.me/api/portraits/men/47.jpg" alt="Team Member" class="team-photo">
+      <div class="card" tabindex="0">
+        <h4>Francesca Neri</h4>
+        <p>Marketing e comunicazione</p>
+      </div>
+      <div class="card" tabindex="0">
         <h4>Luca Ferri</h4>
-        <p>Analista ESG</p>
-      </div>
-      <div class="card">
-        <img src="https://randomuser.me/api/portraits/women/48.jpg" alt="Team Member" class="team-photo">
-        <h4>Elisa Conti</h4>
-        <p>Legal & Compliance</p>
+        <p>Specialista in supply chain sostenibile</p>
       </div>
     </div>
   </section>
 
-  <section class="faq">
+  <section id="testimonials" class="section alt" aria-label="Testimonianze">
+    <h3>Cosa dicono di noi</h3>
+    <div class="testimonial" tabindex="0">
+      <p>“RE-SPACE ha trasformato completamente il mio modo di vivere gli spazi. Consiglio vivamente!”</p>
+      <strong>- Maria G.</strong>
+    </div>
+    <div class="testimonial" tabindex="0">
+      <p>“Grazie al loro aiuto ho ridotto il mio impatto ambientale senza rinunciare allo stile.”</p>
+      <strong>- Lorenzo M.</strong>
+    </div>
+  </section>
+
+  <section id="faq" class="faq" aria-label="Domande frequenti">
     <h3>Domande frequenti</h3>
-    <div class="faq-item">
-      <h4>Come funziona il servizio di decluttering?</h4>
-      <p>Contattaci per una valutazione gratuita. Organizziamo la raccolta e ci occupiamo della ridistribuzione.</p>
+    <div class="faq-item" tabindex="0">
+      <h4>Come funziona il processo di rigenerazione?</h4>
+      <p>Valutiamo gli spazi, pianifichiamo la riorganizzazione e il riuso creativo degli oggetti.</p>
     </div>
-    <div class="faq-item">
-      <h4>Posso scegliere a chi donare i miei oggetti?</h4>
-      <p>Sì, puoi indicare una preferenza tra le organizzazioni partner.</p>
+    <div class="faq-item" tabindex="0">
+      <h4>Quali sono i tempi medi di intervento?</h4>
+      <p>Dipende dalla complessità, ma solitamente tra 2 e 6 settimane.</p>
+    </div>
+    <div class="faq-item" tabindex="0">
+      <h4>Offrite consulenze online?</h4>
+      <p>Sì, anche da remoto per supporto personalizzato.</p>
     </div>
   </section>
 
-  <section id="contact" class="section alt">
+  <section id="contact" aria-label="Contatti">
     <h3>Contattaci</h3>
-    <form class="contact-form">
-      <input type="text" placeholder="Il tuo nome">
-      <input type="email" placeholder="La tua email">
-      <textarea rows="4" placeholder="Il tuo messaggio"></textarea>
-      <button class="btn" type="submit">Invia</button>
-    </form>
+    <p>Vuoi trasformare i tuoi spazi e vivere più sostenibile? Scrivici subito.</p>
+    <a href="mailto:info@re-space.it" class="btn" role="button">Scrivici</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 RE-SPACE Srl - Tutti i diritti riservati</p>
+    <p>© 2025 RE-SPACE Srl. Tutti i diritti riservati.</p>
   </footer>
 </body>
 </html>
-
